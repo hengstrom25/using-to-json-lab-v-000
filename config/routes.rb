@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   get '/products/:id/description', to: 'products#description'
   get '/products/:id/inventory', to: 'products#inventory'
   #get '/products/:id/data', to: 'products#data'
-  get '/products/:id/show', to: 'products#show'
+  get '/products/:id', to: 'products#show { render json: @product.to_json(only: [:name, :description, :inventory, :price, :id]'
 end

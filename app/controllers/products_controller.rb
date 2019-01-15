@@ -28,7 +28,7 @@ class ProductsController < ApplicationController
 
   def data
     product = Product.find(params[:id])
-    render json: ProductSerializer.serialize(product)
+    render json: post.to_json(only: [:name, :inventory, :price, :description, :id])
   end
 
   private
